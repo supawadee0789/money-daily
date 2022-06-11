@@ -17,11 +17,7 @@ class BottomNav extends StatelessWidget {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.business),
-              label: 'Business',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.school),
-              label: 'School',
+              label: 'Summary',
             ),
           ],
           currentIndex: state.index,
