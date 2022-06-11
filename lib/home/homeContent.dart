@@ -19,9 +19,10 @@ class HomeContent extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 25),
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 25),
-              child: Text("Money daily", style: TextStyle(fontSize: 25)),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 25),
+              child: Text("Money daily",
+                  style: Theme.of(context).textTheme.headline1),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
