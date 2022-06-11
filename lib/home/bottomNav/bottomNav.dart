@@ -21,7 +21,6 @@ class BottomNav extends StatelessWidget {
             ),
           ],
           currentIndex: state.index,
-          // selectedItemColor: Colors.amber[800],
           onTap: (id) => BlocProvider.of<BottomnavCubit>(context).goTo(id),
         );
       },

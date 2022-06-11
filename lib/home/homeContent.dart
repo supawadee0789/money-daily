@@ -92,8 +92,18 @@ class HomeContent extends StatelessWidget {
                       decoration: BoxDecoration(
                           border: Border.all(),
                           borderRadius: BorderRadius.circular(10)),
-                      // color: Colors.teal[600],
-                      child: const Center(child: Icon(Icons.add_box_rounded)),
+                      child: Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: const [
+                            Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Icon(Icons.add_box_rounded),
+                            ),
+                            Text('Add')
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],

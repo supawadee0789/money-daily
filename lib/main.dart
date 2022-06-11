@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
               fontStyle: FontStyle.italic,
               color: Color(0xff5A5146)),
           bodyText1: TextStyle(fontSize: 14.0, color: Color(0xff5A5146)),
-          // bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Roboto'),
+          caption: TextStyle(fontSize: 14.0, fontFamily: 'Roboto'),
         ),
       ),
       routes: {
