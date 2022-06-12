@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../addCategory/add_button.dart';
 import '../navigationBloc/navbloc_bloc.dart';
 
 class HomeContent extends StatelessWidget {
@@ -84,28 +85,9 @@ class HomeContent extends StatelessWidget {
                     color: Colors.teal[600],
                     child: const Text('Revolution, they...'),
                   ),
-                  InkWell(
-                    onTap: () =>
-                        context.read<NavBloc>().add(EventAddCategory()),
-                    child: Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: const [
-                            Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Icon(Icons.add_box_rounded),
-                            ),
-                            Text('Add')
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+                  AddButton(
+                      onTap: () =>
+                          context.read<NavBloc>().add(EventAddCategory())),
                 ],
               ),
             )
