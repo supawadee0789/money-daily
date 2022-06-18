@@ -12,8 +12,11 @@ class HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var item = [
-      Item(name: 'food', icon: 'spaghetti', type: 'expense'),
-      Item(name: 'long long long name', icon: 'vegetable', type: 'expense')
+      Item(name: 'food', icon: 'spaghetti', type: ItemType.expense),
+      Item(
+          name: 'long long long name',
+          icon: 'vegetable',
+          type: ItemType.expense)
     ];
     return BlocListener<NavBloc, NavblocState>(
       listener: (context, state) {

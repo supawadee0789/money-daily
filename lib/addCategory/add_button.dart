@@ -12,7 +12,8 @@ class AddButton extends StatelessWidget {
         width: 100,
         height: 100,
         decoration: BoxDecoration(
-            border: Border.all(), borderRadius: BorderRadius.circular(10)),
+            border: Border.all(color: const Color.fromARGB(121, 144, 121, 112)),
+            borderRadius: BorderRadius.circular(10)),
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
