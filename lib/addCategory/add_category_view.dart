@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_daily/addCategory/add_button.dart';
+import 'package:money_daily/addCategory/icon_dialog.dart';
 import 'package:money_daily/addCategory/income_expense.dart';
 
 class AddCategory extends StatelessWidget {
@@ -26,7 +27,15 @@ class AddCategory extends StatelessWidget {
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      AddButton(onTap: () => {}),
+                      AddButton(
+                          onTap: () => {
+                                showDialog<void>(
+                                    context: context,
+                                    barrierDismissible:
+                                        false, // user must tap button!
+                                    builder: (BuildContext context) =>
+                                        IconDialog())
+                              }),
                       Column(
                         children: const [
                           SizedBox(
