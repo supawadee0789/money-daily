@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../addCategory/add_button.dart';
@@ -24,16 +25,10 @@ class HomeContent extends StatelessWidget {
           Navigator.of(context).pushNamed('/addCategory');
         }
       },
-      child: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(25, 85, 25, 0),
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 25),
-              child: Text("Money daily",
-                  style: Theme.of(context).textTheme.headline1),
-            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -52,16 +47,18 @@ class HomeContent extends StatelessWidget {
                   for (Item i in item)
                     CategoryItem(
                       item: i,
-                    ),
+                    ).animate().scale(),
                   AddButton(
-                      onTap: () =>
-                          context.read<NavBloc>().add(EventAddCategory())),
+                          onTap: () =>
+                              context.read<NavBloc>().add(EventAddCategory()))
+                      .animate()
+                      .scale(),
                 ],
               ),
             )
           ],
         ),
-      )),
+      ),
     );
   }
 }

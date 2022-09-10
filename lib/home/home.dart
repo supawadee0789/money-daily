@@ -19,9 +19,36 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<BottomnavCubit, BottomnavState>(
-        builder: ((context, state) =>
-            Center(child: _widgetOptions.elementAt(state.index))),
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.topCenter,
+              child: Text("Money daily",
+                  style: Theme.of(context).textTheme.headline1),
+            ),
+            SizedBox.expand(
+              child: BlocBuilder<BottomnavCubit, BottomnavState>(
+                builder: ((context, state) {
+                  return PageView(
+                    physics: const BouncingScrollPhysics(),
+                    controller: state.pageController,
+                    children: _widgetOptions
+                        .map((e) => Center(
+                              child: e,
+                            ))
+                        .toList(),
+                    onPageChanged: (index) {
+                      context.read<BottomnavCubit>().goTo(index);
+                    },
+                  );
+                }
+                    // Center(child: _widgetOptions.elementAt(state.index))
+                    ),
+              ),
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: const BottomNav(),
     );
